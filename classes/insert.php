@@ -26,8 +26,9 @@ public function insertFunction()
       $insert_query = "Insert into users_info(username,password,gender) values('$username','$password','$gender')";
 
       if(mysqli_query($this->link,$insert_query)){
-        echo "Data Added!";
         header('location:index.php');
+        echo "Data Added!";
+
       }else{
         echo "Data not Added";
       }
