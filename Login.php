@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <?php
-include 'classes/read.php';
-include 'classes/insert.php';
-
+include 'classes/login.php';
  ?>
-
-
 
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>JU Login and Register</title>
+    <title></title>
     <link rel="stylesheet" href="css/fontawesme.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-
     <section class="nav_bar_section">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
@@ -55,64 +50,20 @@ include 'classes/insert.php';
 </nav>
     </section>
 
-
     <section>
       <div class="row">
-        <div class="col-md-4 container">
-          <form class="form-group" action="" method="post"><br>
-            <input type="text" class="form-control" name="username" value="" placeholder="Username"><br>
-            <input type="password" class="form-control" name="password" value="" placeholder="Password"><br>
-            <select class="gender form-control" name="gender">
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
-            <br>
-            <input type="submit" name="submit" value="submit" class="btn btn-info form-control">
+        <div class="col-md-6 mx-auto">
+          <form class="form-group" action="" method="post">
+            <input type="text" name="username3" value="" placeholder="Username" class="form-control"><br>
+            <input type="password" name="password3" value="" placeholder="Password" class="form-control"><br>
+            <input type="submit" name="log" value="Login" class="btn btn-info form-control">
           </form>
-
-        </div>
-        <div class="col-md-8">
-          <table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Password</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Action</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <?php if($data){ ?>
-    <?php while($rows = mysqli_fetch_assoc($data)){ ?>
-    <tr>
-      <th scope="row"><?php echo $rows['id']; ?></th>
-      <td><?php echo $rows['username']; ?></td>
-      <td><?php echo $rows['password']; ?></td>
-      <td><?php echo $rows['gender']; ?></td>
-      <td> <a href="updatePage.php?id=<?php echo urlencode($rows['id']); ?> " class="btn btn-primary">Edit</a>
-          <a href="classes/delete.php?id=<?php echo urlencode($rows['id']); ?>" class="btn btn-danger">Delete</a>
-      </td>
-
-    </tr>
-  <?php } ?>
-<?php }else{ ?>
-  <p>Empty Table</p>
-<?php } ?>
-  </tbody>
-</table>
         </div>
       </div>
-
-
-
-
     </section>
 
-    <section class="text-center">
-      <a href="Login.php" class="btn btn-dark p-3 text-center mt-5">Login</a>
-    </section>
+
+
 
 
 
@@ -123,8 +74,6 @@ include 'classes/insert.php';
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-
 
 
   </body>
