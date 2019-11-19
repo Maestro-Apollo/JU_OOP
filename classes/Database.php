@@ -24,8 +24,6 @@ public function create()
   if(!$this->link){
     echo "Not Connected";
     $this->error = $this->link->connect_error;
-  }else{
-    echo "Connected";
   }
 }
 
